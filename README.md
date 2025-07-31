@@ -9,7 +9,6 @@ A secure, feature-rich forum application built with Go, featuring user authentic
 - 💬 **Comments**: Add comments to posts with threading support
 - 👍 **Likes/Dislikes**: Interactive voting system for posts
 - 🏷️ **Categories**: Organize posts with category filtering
-- 🛡️ **Security**: CSRF protection, input sanitization, and security headers
 - 🎨 **Modern UI**: Clean, responsive design with CSS styling
 - 🗄️ **SQLite Database**: Lightweight, file-based database
 
@@ -19,27 +18,7 @@ A secure, feature-rich forum application built with Go, featuring user authentic
 - Docker
 - Docker Compose
 
-### Running with Docker Compose (Recommended)
-
-1. **Clone and navigate to the project:**
-   ```bash
-   cd forum
-   ```
-
-2. **Build and run with Docker Compose:**
-   ```bash
-   docker-compose up --build
-   ```
-
-3. **Access the application:**
-   Open your browser and go to `http://localhost:8080`
-
-4. **Stop the application:**
-   ```bash
-   docker-compose down
-   ```
-
-### Running with Docker directly
+### Running with Docker
 
 1. **Build the Docker image:**
    ```bash
@@ -92,18 +71,8 @@ forum/
 ├── utils/            # Utility functions (auth, security, etc.)
 ├── main.go           # Application entry point
 ├── Dockerfile        # Docker configuration
-├── docker-compose.yml # Docker Compose configuration
 └── README.md         # This file
 ```
-
-## Security Features
-
-- **CSRF Protection**: All forms include CSRF tokens
-- **Input Sanitization**: User inputs are sanitized to prevent XSS
-- **Session Security**: Secure session management with expiration
-- **Security Headers**: Comprehensive security headers
-- **Request Validation**: Origin and method validation
-- **SQL Injection Prevention**: Parameterized queries
 
 ## Database
 
@@ -137,15 +106,3 @@ The application uses SQLite for data storage. The database file is created autom
 
 - `DB_PATH`: Database file path (default: `dinoforum.db`)
 - `TZ`: Timezone (default: `UTC`)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE). 
