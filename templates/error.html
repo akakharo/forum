@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.ErrorCode}} {{.ErrorTitle}} - DinoForum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="error-container">
+            <div class="error-emoji">{{.ErrorEmoji}}</div>
+            <h1 class="error-title">{{.ErrorTitle}}</h1>
+            <p class="error-message">{{.ErrorMessage}}</p>
+            <a href="/" class="back-link"> Back to Home</a>
+        </div>
+    </div>
+</body>
+</html> 

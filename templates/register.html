@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - DinoForum</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <span class="dino-emoji">🦖</span>
+            <div class="dino-header">Join DinoForum</div>
+            <h1>Create Your Account</h1>
+            
+            <form action="/register" method="POST" onsubmit="return validateForm()">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required 
+                       title="Please enter a valid email address (e.g., user@domain.com)">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required 
+                       minlength="3" maxlength="20" 
+                       pattern="[a-zA-Z0-9_-]+"
+                       title="Username must be 3-20 characters and can only contain letters, numbers, underscores, and hyphens">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required 
+                       minlength="8" maxlength="50"
+                       title="Password must be 8-50 characters long">
+
+                <button type="submit">Register</button>
+                <button type="button" class="secondary-btn" onclick="window.location.href='/'">← Back to Home</button>
+            </form>
+
+            {{if .Error}}
+                <p style="color:red;">{{.Error}}</p>
+            {{end}}
+            
+            <p class="form-footer">Already have an account? <a href="/login">Login here</a>.</p>
+            
+            <div class="requirements-box">
+                <h4>Registration Requirements:</h4>
+                <ul>
+                    <li><strong>Email:</strong> Must be a valid email format</li>
+                    <li><strong>Username:</strong> 3-20 characters (letters, numbers, _, -)</li>
+                    <li><strong>Password:</strong> 8-50 characters long</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+  <footer>
+    &copy; 2025 DinoForum. All rights reserved.
+  </footer>
+
+  <script src="/static/js/register.js"></script>
+</body>
+</html>
